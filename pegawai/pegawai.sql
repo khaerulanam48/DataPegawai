@@ -70,6 +70,34 @@ LOCK TABLES `failed_jobs` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `gaji`
+--
+
+DROP TABLE IF EXISTS `gaji`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gaji` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gaji_pokok` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gaji_umr` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gaji`
+--
+
+LOCK TABLES `gaji` WRITE;
+/*!40000 ALTER TABLE `gaji` DISABLE KEYS */;
+INSERT INTO `gaji` VALUES (1,'Faris Iman','1000','1500','2020-04-01 07:02:17','2020-04-01 07:02:38');
+/*!40000 ALTER TABLE `gaji` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -81,7 +109,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +118,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1),(3,'2020_03_30_104735_create_departement_table',1),(4,'2020_04_01_081233_create_pegawai_table',2);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1),(3,'2020_03_30_104735_create_departement_table',1),(4,'2020_04_01_081233_create_pegawai_table',2),(5,'2020_04_01_133608_create_gaji_table',3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +141,7 @@ CREATE TABLE `pegawai` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +150,7 @@ CREATE TABLE `pegawai` (
 
 LOCK TABLES `pegawai` WRITE;
 /*!40000 ALTER TABLE `pegawai` DISABLE KEYS */;
-INSERT INTO `pegawai` VALUES (3,123,'Khaerul Anam','tegal','Tegal','1999-10-10','pria','dosen laravel','2020-04-01 03:22:40','2020-04-01 03:23:02');
+INSERT INTO `pegawai` VALUES (3,123,'Khaerul Anam','tegal','Tegal','1999-10-10','pria','dosen laravel','2020-04-01 03:22:40','2020-04-01 03:23:02'),(4,1,'azizi`','tangerang','jagakarsa','2020-04-27','perempuan','president','2020-04-01 05:40:53','2020-04-01 05:40:53');
 /*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-01 17:51:06
+-- Dump completed on 2020-04-01 21:08:44
