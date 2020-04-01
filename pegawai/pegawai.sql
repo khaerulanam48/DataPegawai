@@ -81,7 +81,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,8 +90,40 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1),(3,'2020_03_30_104735_create_departement_table',1);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2019_08_19_000000_create_failed_jobs_table',1),(3,'2020_03_30_104735_create_departement_table',1),(4,'2020_04_01_081233_create_pegawai_table',2);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pegawai`
+--
+
+DROP TABLE IF EXISTS `pegawai`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pegawai` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nip` bigint(20) NOT NULL,
+  `nama_pegawai` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pegawai`
+--
+
+LOCK TABLES `pegawai` WRITE;
+/*!40000 ALTER TABLE `pegawai` DISABLE KEYS */;
+INSERT INTO `pegawai` VALUES (3,123,'Khaerul Anam','tegal','Tegal','1999-10-10','pria','dosen laravel','2020-04-01 03:22:40','2020-04-01 03:23:02');
+/*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -133,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-30 21:41:53
+-- Dump completed on 2020-04-01 17:51:06

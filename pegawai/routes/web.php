@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('departement','DepartementController');
+Route::resource('pegawai','PegawaiController');

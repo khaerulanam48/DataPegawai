@@ -20,7 +20,9 @@
 
         }
 
-        nav { 
+        nav {
+            
+            
             background: #8E0E00;
             /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);

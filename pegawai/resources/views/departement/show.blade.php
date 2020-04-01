@@ -9,7 +9,7 @@
     </center>
     <div class="row">
         <div class="col s6">
-            <a href="{{route('departement.index')}}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
+            <a href="{{route('departement.index')}}" class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
         </div>
     </div>
     <hr>
