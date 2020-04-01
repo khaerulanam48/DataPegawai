@@ -4,7 +4,7 @@
 <div class="container">
     <!-- Page Content goes here -->
     <center>
-        <h3>Data Pegawai</h3>
+        <h3>Tampilan Data Pegawai</h3>
     </center>
 
 
