@@ -51,7 +51,7 @@
     <nav class="#004e92 ">
         <div class="nav-wrapper">
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <a href="#" class="brand-logo center"> <img src="{{ ('worker.png') }}" height="25px" alt="" srcset=""> Pegawai</a>
+            <a href="{{route ('departement.index') }}" class="brand-logo center"> <img src="{{ ('worker.png') }}" height="25px" alt="" srcset=""> Pegawai</a>
         </div>
 
     </nav>

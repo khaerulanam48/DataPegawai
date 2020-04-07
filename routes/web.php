@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 Route::resource('departement','DepartementController');
+Route::get('/search', 'DepartementController@search');
+
 Route::resource('pegawai','PegawaiController');

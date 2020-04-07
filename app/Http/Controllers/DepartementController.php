@@ -14,8 +14,15 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        $pegawai = Departement::all();
+        $pegawai = Departement::paginate(3);
 
+        return view('departement.index', compact('pegawai'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $pegawai = Departement::where('nama_departement', 'like', '%'.$search.'%')->paginate(3);
         return view('departement.index', compact('pegawai'));
     }
 
@@ -47,6 +54,7 @@ class DepartementController extends Controller
        return redirect()->route('departement.index');
     }
 
+    
     /**
      * Display the specified resource.
      *

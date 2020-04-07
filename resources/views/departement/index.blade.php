@@ -4,30 +4,32 @@
 <div class="container">
     <!-- Page Content goes here -->
     <center>
-        <h3>Data Departement</h3>
+        <h4>Data Departement</h4>
     </center>
 
 
     <hr>
     <div class="row">
-        <div class="col s6">
+        <div class="col s6 ">
             <a href="{{route ('departement.create')}}" class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
         </div>
 
-        <div class="col s6">
-
+        <div class="col s6 ">
+        <form action="/search" method="get">
             <div class="col s6">
-                <input placeholder="Search" type="search" required>
+                <input placeholder="Search" name="search" type="search" required>
             </div>
+            
             <div class="col s4">
                 <button id="search" class="btn-medium waves-effect waves-light btn red" type="submit" name="action">Cari
                     <i class="material-icons right">search</i>
                 </button>
             </div>
-
+            </form>
         </div>
     </div>
-
+    
+    <div class="row">
     <table class="responsive-table highlight">
         <thead>
             <tr>
@@ -38,11 +40,11 @@
         </thead>
 
         <tbody>
-            <?php $no = 1; ?>
-            @foreach ($pegawai as $key => $value )
+            
+            @foreach ($pegawai as $no => $value )
 
             <tr>
-                <td>{{ $no++ }}</td>
+                <td>{{ ++$no + ($pegawai->currentPage()-1) * $pegawai->perPage() }}</td>
                 <td>{{ $value->nama_departement}}</td>
                 <td>
                     <div class="row">
@@ -68,5 +70,12 @@
 
         </tbody>
     </table>
+    </div>
+
+    <ul class="pagination">
+    {{$pegawai->links()}}
+    </ul>
+    
+            
 </div>
 @endsection
