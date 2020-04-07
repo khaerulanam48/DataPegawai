@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pegawai;
+use Yajra\DataTables\DataTables;
 
 class PegawaiController extends Controller
 {
@@ -12,10 +13,17 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pegawai = Pegawai::all();
-
+        $pegawai = Pegawai::latest()->get();
+        if ($request->ajax()) {
+            return DataTables::of($pegawai)
+            ->addIndexColumn()
+            ->addColumn('aksi',function($data){
+                return view('pegawai.view.aksi',compact('data'));
+            })
+            ->make(true);
+        }
         return view('pegawai.index', compact('pegawai'));
     }
 

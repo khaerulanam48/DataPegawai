@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('departement.main');
-// });
+Route::get('/', function () {
+    return view('departement.main');
+});
 
 Route::resource('departement','DepartementController');
 Route::resource('pegawai','PegawaiController');
-Route::resource('gaji','GajiController');

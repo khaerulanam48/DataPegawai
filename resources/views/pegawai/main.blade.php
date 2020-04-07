@@ -8,6 +8,9 @@
     <title>Pegawai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <style>
         #slide-out {
             
@@ -20,7 +23,9 @@
 
         }
 
-        nav { 
+        nav {
+            
+            
             background: #8E0E00;
             /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
@@ -66,7 +71,7 @@
                 <li><a href="{{route ('pegawai.index') }}"><i class="material-icons">note_add</i> Data Pegawai</a></li>
                 <li><a href="#!"><i class="material-icons">note_add</i>Data Cuti</a></li>
                 <li><a href="{{route ('departement.index') }}"><i class="material-icons">note_add</i>Data Departemen</a></li>
-                <li><a href="{{route ('gaji.index') }}"><i class="material-icons">note_add</i>Gaji Pegawai</a></li>
+                <li><a href="#!"><i class="material-icons">note_add</i>Gaji Pegawai</a></li>
             </ul>
         </div>
 
@@ -86,6 +91,11 @@
         var instances = M.Sidenav.init(elems, {});
     });
 </script>
+<!-- Datatables -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+@stack('js')
 
 </html>
 
