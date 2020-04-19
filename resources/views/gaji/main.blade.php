@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="{{ ('worker.png') }}">
-    <title>Pegawai</title>
+    <title>Gaji Pegawai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
@@ -51,7 +51,7 @@
     <nav class="#004e92 ">
         <div class="nav-wrapper">
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <a href="{{route ('departement.index') }}" class="brand-logo center"> <img src="{{ ('worker.png') }}" height="25px" alt="" srcset=""> Pegawai</a>
+            <a href="{{route ('gaji.index') }}" class="brand-logo center"> <img src="{{ ('worker.png') }}" height="25px" alt="" srcset=""> Pegawai</a>
         </div>
 
     </nav>

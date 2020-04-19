@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::resource('departement','DepartementController');
 Route::get('/search', 'DepartementController@search');
-
+Route::resource('gaji','GajiPegawaiController');
 Route::resource('pegawai','PegawaiController');
