@@ -1,5 +1,5 @@
 
-data pegawai poltek harber
+data pegawai 
 
 langkah-langkah installasi projek
 1. git clone https://github.com/mirza-alim-m/laravel2020-A-G5.git
