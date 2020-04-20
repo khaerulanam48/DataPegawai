@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 data pegawai poltek harber
 
 langkah-langkah installasi projek
@@ -6,6 +6,7 @@ langkah-langkah installasi projek
 2. composer install 
 3. composer update
 4. copi file .env di dalam folder pegawai ke dalam folder laravel2020-A-G5
+
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 

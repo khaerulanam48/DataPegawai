@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\gajipegawai;
+use App\GajiPegawai;
 
 class GajiPegawaiController extends Controller
 {
@@ -14,7 +14,7 @@ class GajiPegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = gajipegawai::paginate(3);
+        $pegawai = GajiPegawai::paginate(3);
 
         return view('gaji.index', compact('pegawai'));
     }
@@ -22,7 +22,7 @@ class GajiPegawaiController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $pegawai = gajipegawai::where('nama', 'like', '%'.$search.'%')->paginate(3);
+        $pegawai = GajiPegawai::where('nama', 'like', '%'.$search.'%')->paginate(3);
         return view('gaji.index', compact('pegawai'));
     }
 
@@ -49,7 +49,7 @@ class GajiPegawaiController extends Controller
             'nama' => 'required'
         ]);
 
-       gajipegawai::create($request->all());
+       GajiPegawai::create($request->all());
 
        return redirect()->route('gaji.index');
 
@@ -63,7 +63,7 @@ class GajiPegawaiController extends Controller
      */
     public function show($id)
     {
-        $pegawai = gajipegawai::find($id);
+        $pegawai = GajiPegawai::find($id);
 
         return view('gaji.show', compact('pegawai'));
 
@@ -77,7 +77,7 @@ class GajiPegawaiController extends Controller
      */
     public function edit($id)
     {
-        $pegawai = gajipegawai::find($id);
+        $pegawai = GajiPegawai::find($id);
 
         return view('gaji.edit', compact('pegawai'));
 
@@ -96,7 +96,7 @@ class GajiPegawaiController extends Controller
             'nama' => 'required',
         ]);
 
-        gajipegawai::find($id)->update($request->all());
+        GajiPegawai::find($id)->update($request->all());
 
         return redirect()->route('gaji.index');
 
@@ -110,7 +110,7 @@ class GajiPegawaiController extends Controller
      */
     public function destroy($id)
     {
-        $pegawai = gajipegawai::find($id);
+        $pegawai = GajiPegawai::find($id);
         $pegawai->delete();
         
         return redirect()->route('gaji.index');

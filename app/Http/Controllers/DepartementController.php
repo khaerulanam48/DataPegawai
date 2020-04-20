@@ -14,7 +14,7 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        $pegawai = Departement::paginate(3);
+        $pegawai = Departement::paginate(10);
 
         return view('departement.index', compact('pegawai'));
     }
@@ -22,7 +22,7 @@ class DepartementController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $pegawai = Departement::where('nama_departement', 'like', '%'.$search.'%')->paginate(3);
+        $pegawai = Departement::where('nama_departement', 'like', '%'.$search.'%')->paginate(10);
         return view('departement.index', compact('pegawai'));
     }
 
