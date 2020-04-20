@@ -1,4 +1,4 @@
-@extends('departement.main')
+@extends('gaji.main')
 
 @section('content')
 <div class="container">
@@ -21,8 +21,16 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="name" type="text" name="nama_gaji" class="validate" value="{{$pegawai->nama_gaji}}">
+                    <input id="name" type="text" name="nama" class="validate" value="{{$pegawai->nama}}">
                     <label for="name">Nama </label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="name" type="text" name="gajipokok" class="validate" value="{{$pegawai->gajipokok}}">
+                    <label for="name">Gaji Pokok </label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="name" type="text" name="gajiumr" class="validate" value="{{$pegawai->gajiumr}}">
+                    <label for="name">Gaji UMR </label>
                 </div>
             </div>
             <button class="btn-medium waves-effect waves-light btn red" type="submit" name="action">Submit

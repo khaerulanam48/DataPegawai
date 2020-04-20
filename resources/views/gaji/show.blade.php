@@ -20,19 +20,19 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->nama_gaji}}">
+                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->nama}}">
                     <label for="last_name">nama pegawai</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->nama_gaji}}">
+                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->gajipokok}}">
                     <label for="last_name">gaji pokok</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->nama_gaji}}">
+                    <input id="last_name" type="text" name="nama" class="validate" disabled value="{{$pegawai->gajiumr}}">
                     <label for="last_name">Gaji UMR</label>
                 </div>
             </div>
