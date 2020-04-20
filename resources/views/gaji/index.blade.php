@@ -21,8 +21,7 @@
             </div>
             
             <div class="col s4">
-                <button id="search" class="btn-medium waves-effect waves-light btn red" type="submit" name="action">Cari
-                    <i class="material-icons right">search</i>
+                <button id="search" class="btn-medium waves-effect waves-light btn red" type="submit" name="action">Cari<i class="material-icons right">search</i>
                 </button>
             </div>
             </form>
