@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\GajiPegawai;
+use App\RiwayatPendidikan;
 use Faker\Factory as Faker;
 
-class GajiSeeder extends Seeder
+class RiwayatPendidikanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +16,10 @@ class GajiSeeder extends Seeder
         $faker = Faker::create('id_ID');
 
         for ($i = 1; $i <= 100; $i++) {
-            GajiPegawai::insert([
+            RiwayatPendidikan::insert([
             'nama' => $faker->name,
-            'gajipokok' => $faker->numberBetween(1000000,10000000),
-            'gajiumr' => $faker->numberBetween(1000000,10000000)
+            'pendidikanterakhir' => $faker->jobTitle,
+            'tahunlulus' => $faker->numberBetween(1980,2000)
         ]);
         }
     }

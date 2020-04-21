@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\RiwayatPendidikan;
 use Illuminate\Http\Request;
-use App\GajiPegawai;
 
-class GajiPegawaiController extends Controller
+
+class RiwayatPendidikanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +15,16 @@ class GajiPegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = GajiPegawai::paginate(3);
+        $pegawai = RiwayatPendidikan::paginate(10);
 
-        return view('gaji.index', compact('pegawai'));
+        return view('riwayatpendidikan.index', compact('pegawai'));
     }
 
     public function search(Request $request)
     {
-        $search = $request->get('searchdatagajipegawai');
-        $pegawai = GajiPegawai::where('nama', 'like', '%'.$search.'%')->paginate(10);
-        return view('gaji.index', compact('pegawai'));
+        $search = $request->get('searchriwayatpendidikan');
+        $pegawai = RiwayatPendidikan::where('nama', 'like', '%'.$search.'%')->paginate(10);
+        return view('riwayatpendidikan.index', compact('pegawai'));
     }
 
     /**
@@ -34,7 +35,7 @@ class GajiPegawaiController extends Controller
     public function create()
     {
         //
-        return view('gaji.create');
+        return view('riwayatpendidikan.create');
     }
 
     /**
@@ -49,12 +50,12 @@ class GajiPegawaiController extends Controller
             'nama' => 'required'
         ]);
 
-       GajiPegawai::create($request->all());
+       RiwayatPendidikan::create($request->all());
 
-       return redirect()->route('gaji.index');
-
+       return redirect()->route('riwayatpendidikan.index');
     }
 
+    
     /**
      * Display the specified resource.
      *
@@ -63,10 +64,9 @@ class GajiPegawaiController extends Controller
      */
     public function show($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        $pegawai = RiwayatPendidikan::find($id);
 
-        return view('gaji.show', compact('pegawai'));
-
+        return view('riwayatpendidikan.show', compact('pegawai'));
     }
 
     /**
@@ -77,10 +77,9 @@ class GajiPegawaiController extends Controller
      */
     public function edit($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        $pegawai = RiwayatPendidikan::find($id);
 
-        return view('gaji.edit', compact('pegawai'));
-
+        return view('riwayatpendidikan.edit', compact('pegawai'));
     }
 
     /**
@@ -94,12 +93,13 @@ class GajiPegawaiController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'pendidikanterakhir' => 'required',
+            'tahunlulus' => 'required'
         ]);
 
-        GajiPegawai::find($id)->update($request->all());
+        RiwayatPendidikan::find($id)->update($request->all());
 
-        return redirect()->route('gaji.index');
-
+        return redirect()->route('riwayatpendidikan.index');
     }
 
     /**
@@ -110,10 +110,9 @@ class GajiPegawaiController extends Controller
      */
     public function destroy($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        $pegawai = RiwayatPendidikan::find($id);
         $pegawai->delete();
         
-        return redirect()->route('gaji.index');
-
+        return redirect()->route('riwayatpendidikan.index');
     }
 }

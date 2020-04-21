@@ -20,4 +20,9 @@ Route::get('/', function () {
 Route::resource('departement','DepartementController');
 Route::get('/search', 'DepartementController@search');
 Route::resource('gaji','GajiPegawaiController');
+Route::get('/searchdatagajipegawai', 'GajiPegawaiController@search');
 Route::resource('pegawai','PegawaiController');
+Route::resource('datacuti','DataCutiController');
+Route::get('/searchdatacuti', 'DataCutiController@search');
+Route::resource('riwayatpendidikan','RiwayatPendidikanController');
+Route::get('/searchriwayatpendidikan', 'RiwayatPendidikanController@search');

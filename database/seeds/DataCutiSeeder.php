@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\GajiPegawai;
+use App\DataCuti;
 use Faker\Factory as Faker;
 
-class GajiSeeder extends Seeder
+class DataCutiSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +16,9 @@ class GajiSeeder extends Seeder
         $faker = Faker::create('id_ID');
 
         for ($i = 1; $i <= 100; $i++) {
-            GajiPegawai::insert([
+            DataCuti::insert([
             'nama' => $faker->name,
-            'gajipokok' => $faker->numberBetween(1000000,10000000),
-            'gajiumr' => $faker->numberBetween(1000000,10000000)
+            'datacuti' => $faker->jobTitle
         ]);
         }
     }

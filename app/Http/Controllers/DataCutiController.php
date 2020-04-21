@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DataCuti;
 use Illuminate\Http\Request;
-use App\GajiPegawai;
 
-class GajiPegawaiController extends Controller
+class DataCutiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +14,16 @@ class GajiPegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = GajiPegawai::paginate(3);
+        $pegawai = DataCuti::paginate(10);
 
-        return view('gaji.index', compact('pegawai'));
+        return view('datacuti.index', compact('pegawai'));
     }
 
     public function search(Request $request)
     {
-        $search = $request->get('searchdatagajipegawai');
-        $pegawai = GajiPegawai::where('nama', 'like', '%'.$search.'%')->paginate(10);
-        return view('gaji.index', compact('pegawai'));
+        $search = $request->get('searchdatacuti');
+        $pegawai = DataCuti::where('nama', 'like', '%'.$search.'%')->paginate(10);
+        return view('datacuti.index', compact('pegawai'));
     }
 
     /**
@@ -33,8 +33,7 @@ class GajiPegawaiController extends Controller
      */
     public function create()
     {
-        //
-        return view('gaji.create');
+        return view('datacuti.create');
     }
 
     /**
@@ -46,13 +45,13 @@ class GajiPegawaiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required'
+            'nama' => 'required',
+            'datacuti' => 'required'
         ]);
 
-       GajiPegawai::create($request->all());
+       DataCuti::create($request->all());
 
-       return redirect()->route('gaji.index');
-
+       return redirect()->route('datacuti.index');
     }
 
     /**
@@ -63,10 +62,9 @@ class GajiPegawaiController extends Controller
      */
     public function show($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        $pegawai = DataCuti::find($id);
 
-        return view('gaji.show', compact('pegawai'));
-
+        return view('datacuti.show', compact('pegawai'));
     }
 
     /**
@@ -77,10 +75,12 @@ class GajiPegawaiController extends Controller
      */
     public function edit($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        // $datacuti = DB::select('select * from datacuti where id=?',[$id]);
+        // return view('datacuti.edit', ['datacuti' => $datacuti]);
 
-        return view('gaji.edit', compact('pegawai'));
+        $pegawai = DataCuti::find($id);
 
+        return view('datacuti.edit', compact('pegawai'));
     }
 
     /**
@@ -94,12 +94,12 @@ class GajiPegawaiController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'datacuti' => 'required'
         ]);
 
-        GajiPegawai::find($id)->update($request->all());
+        DataCuti::find($id)->update($request->all());
 
-        return redirect()->route('gaji.index');
-
+        return redirect()->route('datacuti.index');
     }
 
     /**
@@ -110,10 +110,9 @@ class GajiPegawaiController extends Controller
      */
     public function destroy($id)
     {
-        $pegawai = GajiPegawai::find($id);
+        $pegawai = DataCuti::find($id);
         $pegawai->delete();
         
-        return redirect()->route('gaji.index');
-
+        return redirect()->route('datacuti.index');
     }
 }

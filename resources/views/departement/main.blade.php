@@ -64,9 +64,10 @@
             <ul id="slide-out" class="sidenav sidenav-fixed">
                 <img class="circle" src="{{ ('worker.png') }}" width="50%" >
                 <li><a href="{{route ('pegawai.index') }}"><i class="material-icons">note_add</i> Data Pegawai</a></li>
-                <li><a href="#!"><i class="material-icons">note_add</i>Data Cuti</a></li>
+                <li><a href="{{route ('datacuti.index') }}"><i class="material-icons">note_add</i>Data Cuti</a></li>
                 <li><a href="{{route ('departement.index') }}"><i class="material-icons">note_add</i>Data Departemen</a></li>
                 <li><a href="{{route ('gaji.index') }}"><i class="material-icons">note_add</i>Gaji Pegawai</a></li>
+                <li><a href="{{route ('riwayatpendidikan.index') }}"><i class="material-icons">note_add</i>Riwayat Pendidikan</a></li>
             </ul>
         </div>
 

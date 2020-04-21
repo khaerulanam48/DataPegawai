@@ -20,6 +20,7 @@
             @method("PUT")
 
             <div class="row">
+                
                 <div class="input-field col s12">
                     <input id="name" type="number" name="nip" class="validate" value="{{$pegawai->nip}}">
                     <label for="name">NIP</label>
